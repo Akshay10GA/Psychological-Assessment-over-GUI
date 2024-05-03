@@ -4,6 +4,8 @@ from tkinter import messagebox as m
 import os
 import mysql.connector 
 from operator import itemgetter
+from pathlib import Path
+current_dir = Path(__file__).parent
 global UsrnamE;global PassworD;global i
 i = 0
 j = 1
@@ -16,13 +18,13 @@ class start:
                 self.root.resizable(False,False)
 
                 # design 1st window of gui here,, something like welcome start here...
-                image=Image.open(os.path.join(r'C:\Users\LENOVO IP3 7HIN\Desktop\GUI Project\images\basket.png'))
-                image=image.resize((1300,700), Image.ANTIALIAS)
+                image=Image.open(current_dir / "images" / "basket.png")
+                image=image.resize((1300,700), Image.Resampling.LANCZOS)
                 self.bg_inc=ImageTk.PhotoImage(image)
                 self.bg_inc_img=Label(self.root,image=self.bg_inc).place(x=0,y=0)
 
-                image1=Image.open(os.path.join(r'C:\Users\LENOVO IP3 7HIN\Desktop\GUI Project\images\pa.png'))
-                image1=image1.resize((1200,320), Image.ANTIALIAS)
+                image1=Image.open(current_dir / "images" / "pa.png")
+                image1=image1.resize((1200,320), Image.Resampling.LANCZOS)
                 self.bg_inc1=ImageTk.PhotoImage(image1)
                 self.bg_inc_img1=Label(self.root,image=self.bg_inc1).place(x=50,y=50)
 
@@ -35,8 +37,8 @@ class start:
 # ===========================================================================================================
         def login(self):
                 self.clr_scr()
-                image1=Image.open(os.path.join(r'C:\Users\LENOVO IP3 7HIN\Desktop\GUI Project\images\psyc.jpg'))
-                image1=image1.resize((1300,700), Image.ANTIALIAS)
+                image1=Image.open(current_dir / "images" / "psyc.jpg")
+                image1=image1.resize((1300,700), Image.Resampling.LANCZOS)
                 self.bg_inc1=ImageTk.PhotoImage(image1)
                 self.bg_inc_img1=Label(self.root,image=self.bg_inc1).place(x=0,y=-5)
                 global UsrnamE;global PassworD;global Incog
@@ -72,8 +74,8 @@ class start:
                 self.frame_inc=Frame(self.root,bg='#C04341')
                 self.frame_inc.place(x=750,y=60,width=400,height=400)
 
-                image=Image.open(r'C:\Users\LENOVO IP3 7HIN\Desktop\GUI Project\images\p_eye.png')
-                image=image.resize((420, 350), Image.ANTIALIAS)
+                image=Image.open(current_dir / "images" / "p_eye.png")
+                image=image.resize((420, 350), Image.Resampling.LANCZOS)
                 self.bg_inc=ImageTk.PhotoImage(image)
                 self.bg_inc_img=Label(self.frame_inc,image=self.bg_inc).place(x=-5,y=-34)
 
@@ -119,8 +121,8 @@ class start:
                 print(res)
         def signup(self):
                 self.clr_scr()
-                image1=Image.open(os.path.join(r'C:\Users\LENOVO IP3 7HIN\Desktop\GUI Project\images\beach.jpg'))
-                image1=image1.resize((1300,700), Image.ANTIALIAS)
+                image1=Image.open(current_dir / "images" / "beach.jpg")
+                image1=image1.resize((1300,700), Image.Resampling.LANCZOS)
                 self.bg_inc1=ImageTk.PhotoImage(image1)
                 self.bg_inc_img1=Label(self.root,image=self.bg_inc1).place(x=0,y=-5)
                 global Usrname;global Password;global agevar;global Profvar;global MobNo;global AdressVar;global GenderVar;global cityVar
@@ -201,8 +203,8 @@ class start:
         def tests(self):
                 self.count = 0
                 self.clr_scr()
-                image=Image.open(r'C:\Users\LENOVO IP3 7HIN\Desktop\GUI Project\images\sky.png')
-                image=image.resize((1300, 700), Image.ANTIALIAS)
+                image=Image.open(current_dir / 'images' / 'sky.png')
+                image=image.resize((1300, 700), Image.Resampling.LANCZOS)
                 self.bg=ImageTk.PhotoImage(image)
                 self.bg_img=Label(self.root,image=self.bg).place(x=0,y=0,relheight=1,relwidth=1)
 
@@ -220,8 +222,8 @@ class start:
                 self.tesT1=Button(self.root,text="Locus of Control",command=self.test_page3,cursor='hand2',font=('Arial',20),bg='gray',fg='gold').place(x=200,y=250,width=950,height=80)
         def test_page(self):
                 self.clr_scr()
-                image=Image.open(r'C:\Users\LENOVO IP3 7HIN\Desktop\GUI Project\images\black page.png')
-                image=image.resize((1300, 700), Image.ANTIALIAS)
+                image=Image.open(current_dir / 'images' / 'black page.png')
+                image=image.resize((1300, 700), Image.Resampling.LANCZOS)
                 self.bg=ImageTk.PhotoImage(image)
                 self.bg_img=Label(self.root,image=self.bg).place(x=0,y=0,relheight=1,relwidth=1)
 
@@ -232,8 +234,8 @@ class start:
                 self.b_btn=Button(self.root,text='Back',command=self.tests,cursor='hand2',font=('Arial',22,'bold'),fg='black',bg='gold').place(x=30,y=500,width=100,height=50)
         def test_page2(self):
                 self.clr_scr()
-                image=Image.open(r'C:\Users\LENOVO IP3 7HIN\Desktop\GUI Project\images\black page.png')
-                image=image.resize((1300, 700), Image.ANTIALIAS)
+                image=Image.open(current_dir / 'images' / 'black page.png')
+                image=image.resize((1300, 700), Image.Resampling.LANCZOS)
                 self.bg=ImageTk.PhotoImage(image)
                 self.bg_img=Label(self.root,image=self.bg).place(x=0,y=0,relheight=1,relwidth=1)
 
@@ -244,8 +246,8 @@ class start:
                 self.b_btn=Button(self.root,text='Back',command=self.tests,cursor='hand2',font=('Arial',22,'bold'),fg='black',bg='gold').place(x=30,y=500,width=100,height=50)
         def test_page3(self):
                 self.clr_scr()
-                image=Image.open(r'C:\Users\LENOVO IP3 7HIN\Desktop\GUI Project\images\black page.png')
-                image=image.resize((1300, 700), Image.ANTIALIAS)
+                image=Image.open(current_dir / 'images' / 'black page.png')
+                image=image.resize((1300, 700), Image.Resampling.LANCZOS)
                 self.bg=ImageTk.PhotoImage(image)
                 self.bg_img=Label(self.root,image=self.bg).place(x=0,y=0,relheight=1,relwidth=1)
 
@@ -256,11 +258,11 @@ class start:
                 self.b_btn=Button(self.root,text='Back',command=self.tests,cursor='hand2',font=('Arial',22,'bold'),fg='black',bg='gold').place(x=30,y=500,width=100,height=50)  
         def test_start(self):
                 self.clr_scr()
-                image1=Image.open(os.path.join(r'C:\Users\LENOVO IP3 7HIN\Desktop\GUI Project\images\test_bg.jpg'))
-                image1=image1.resize((1300,700), Image.ANTIALIAS)
+                image1=Image.open(current_dir / "images" / "test_bg.jpg")
+                image1=image1.resize((1300,700), Image.Resampling.LANCZOS)
                 self.bg_inc1=ImageTk.PhotoImage(image1)
                 self.bg_inc_img1=Label(self.root,image=self.bg_inc1).place(x=0,y=-5)
-                myfile = open(r"C:\Users\LENOVO IP3 7HIN\Desktop\GUI Project\project.txt" , "r")
+                myfile = open( current_dir / "project.txt" , "r")
                 myline = myfile.readlines()
                 self.que=Label(self.root,text='Select the appropriate option based on your current situation.',bg="#636363",fg='white',font=('Arial',20,'bold')).place(x=20,y=20,width=1100,height=80)
                 global i
@@ -275,11 +277,11 @@ class start:
                         self.result()
         def test_start2(self):
                 self.clr_scr()
-                image1=Image.open(os.path.join(r'C:\Users\LENOVO IP3 7HIN\Desktop\GUI Project\images\test_bg.jpg'))
-                image1=image1.resize((1300,700), Image.ANTIALIAS)
+                image1=Image.open(current_dir / "images" / "test_bg.jpg")
+                image1=image1.resize((1300,700), Image.Resampling.LANCZOS)
                 self.bg_inc1=ImageTk.PhotoImage(image1)
                 self.bg_inc_img1=Label(self.root,image=self.bg_inc1).place(x=0,y=-5)
-                myfile = open(r"C:\Users\LENOVO IP3 7HIN\Desktop\GUI Project\project_2.txt" , "r")
+                myfile = open( current_dir / "project_2.txt" , "r")
                 myline = myfile.readlines()
                 global i
                 if i < 50:
@@ -295,11 +297,11 @@ class start:
                         self.result_2()
         def test_start3(self):
                 self.clr_scr()
-                image1=Image.open(os.path.join(r'C:\Users\LENOVO IP3 7HIN\Desktop\GUI Project\images\test_bg.jpg'))
-                image1=image1.resize((1300,700), Image.ANTIALIAS)
+                image1=Image.open(current_dir / "images" / "test_bg.jpg")
+                image1=image1.resize((1300,700), Image.Resampling.LANCZOS)
                 self.bg_inc1=ImageTk.PhotoImage(image1)
                 self.bg_inc_img1=Label(self.root,image=self.bg_inc1).place(x=0,y=-5)
-                myfile = open(r"C:\Users\LENOVO IP3 7HIN\Desktop\GUI Project\project_3.txt" , "r")
+                myfile = open( current_dir / "project_3.txt" , "r")
                 myline = myfile.readlines()
                 global i  
                 global j
@@ -320,8 +322,8 @@ class start:
                         self.result_3() 
         def age_gender(self):
                 self.clr_scr()
-                image1=Image.open(os.path.join(r'C:\Users\LENOVO IP3 7HIN\Desktop\GUI Project\images\test_bg.jpg'))
-                image1=image1.resize((1300,700), Image.ANTIALIAS)
+                image1=Image.open(current_dir / "images" / "test_bg.jpg")
+                image1=image1.resize((1300,700), Image.Resampling.LANCZOS)
                 self.bg_inc1=ImageTk.PhotoImage(image1)
                 self.bg_inc_img1=Label(self.root,image=self.bg_inc1).place(x=0,y=-5)
                 global GenderVar1;global agevar1
@@ -379,8 +381,8 @@ class start:
                         self.count += 1                    
         def result(self):
                 self.clr_scr()
-                image1=Image.open(os.path.join(r'C:\Users\LENOVO IP3 7HIN\Desktop\GUI Project\images\dark_beach.jpg'))
-                image1=image1.resize((1300,700), Image.ANTIALIAS)
+                image1=Image.open(current_dir / "images" / "dark_beach.jpg")
+                image1=image1.resize((1300,700), Image.Resampling.LANCZOS)
                 self.bg_inc1=ImageTk.PhotoImage(image1)
                 self.bg_inc_img1=Label(self.root,image=self.bg_inc1).place(x=0,y=-5)
                 self.res=Label(self.root,text='Based on your responses, your result is :',font=('Arial',30,'bold')).place(x=80,y=50,width=1100,height=50)
@@ -415,8 +417,8 @@ class start:
                 conn4.close()
         def result_2(self):
                 self.clr_scr()
-                image1=Image.open(os.path.join(r'C:\Users\LENOVO IP3 7HIN\Desktop\GUI Project\images\dark_beach.jpg'))
-                image1=image1.resize((1300,700), Image.ANTIALIAS)
+                image1=Image.open(current_dir / "images" / "dark_beach.jpg")
+                image1=image1.resize((1300,700), Image.Resampling.LANCZOS)
                 self.bg_inc1=ImageTk.PhotoImage(image1)
                 self.bg_inc_img1=Label(self.root,image=self.bg_inc1).place(x=0,y=-5)
                 self.res=Label(self.root,text='Based on your responses, your result is :',font=('Arial',30,'bold')).place(x=80,y=50,width=1100,height=50)
@@ -467,8 +469,8 @@ pursuits. High scores may day dream a lot. Low scorers may be very down to earth
                 conn4.close()
         def result_3(self):
                 self.clr_scr()
-                image1=Image.open(os.path.join(r'C:\Users\LENOVO IP3 7HIN\Desktop\GUI Project\images\dark_beach.jpg'))
-                image1=image1.resize((1300,700), Image.ANTIALIAS)
+                image1=Image.open(current_dir / "images" / "dark_beach.jpg")
+                image1=image1.resize((1300,700), Image.Resampling.LANCZOS)
                 self.bg_inc1=ImageTk.PhotoImage(image1)
                 self.bg_inc_img1=Label(self.root,image=self.bg_inc1).place(x=0,y=-5)
                 self.res=Label(self.root,text='Based on your responses, your result is :',font=('Arial',30,'bold')).place(x=80,y=50,width=1100,height=50)
@@ -489,11 +491,11 @@ pursuits. High scores may day dream a lot. Low scorers may be very down to earth
                         Result = 'Internal Locus of Control'
                         self.res=Label(self.root,text='Internal Locus of Control',font=('Arial',60,'bold')).place(x=80,y=120,width=1100,height=90) 
                         self.res=Label(self.root,text='People who develop an internal locus of control believe \n that they are responsible for their own success. \n Those with an external locus of control believe \n that external forces, like luck, determine their outcomes.',font=('Arial',20,'bold')).place(x=80,y=250,width=1100,height=300)  
-                conn4 = mysql.connector.connect(host="localhost",username='root',password="Pass@7276",database="akshaydb1")
+                conn4 = mysql.connector.connect(host="localhost",username='root',password="SomePass",database="akshaydb1")
                 my_cursor4 = conn4.cursor()
                 if UsrnamE.get()!="":
                         my_cursor4.execute("insert into LOC_result values(%s,%s)",(
-                                                                        UsrnamE.get(),
+                                                                        UsrnamE.get(),s
                                                                         Result                                      
                                                                 ))
                 else:
