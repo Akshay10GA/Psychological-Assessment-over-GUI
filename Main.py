@@ -495,7 +495,7 @@ pursuits. High scores may day dream a lot. Low scorers may be very down to earth
                 my_cursor4 = conn4.cursor()
                 if UsrnamE.get()!="":
                         my_cursor4.execute("insert into LOC_result values(%s,%s)",(
-                                                                        UsrnamE.get(),s
+                                                                        UsrnamE.get(),
                                                                         Result                                      
                                                                 ))
                 else:
